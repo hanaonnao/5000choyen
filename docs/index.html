@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="zh-TW">
 
 <head>
 	<meta charset="utf-8">
@@ -8,12 +8,12 @@
 	<style type="text/css">
 		@font-face {
 			font-family: 'notobk';
-			src: url('notobk-subset.otf') format('opentype');
+			src: url('NotoSansCJKtc-Black.otf') format('opentype');
 		}
 
 		@font-face {
 			font-family: 'notoserifbk';
-			src: url('notoserifbk-subset.otf') format('opentype');
+			src: url('NotoSerifCJKtc-Black.otf') format('opentype');
 		}
 
 		div {
@@ -57,11 +57,14 @@
 
 <body>
 	<h1>5000兆円ジェネレーター super</h1>
+	<h2>5000兆円發生器 super</h2>
 	<div>
 		<p>
 			<span>
 				<!-- eslint-disable -->
 				5000兆円風の画像を生成するツールです。<font color="blue">`欲しい!`</font> も生成できます。
+				<br>
+				5000兆円風格的圖像生成工具。第二句的<font color="blue">`欲しい!`</font> 也能生成。
 			</span>
 		</p>
 		<hr>
@@ -81,7 +84,7 @@
 		<div>
 			<h4>Changelog</h4>
 			<p><font color="blue">2018-06-10: 404 NotFound が表示される問題に対応しました</font></p>
-
+			<p><font color="blue">2021-05-03: 中文字型支援。添加了中文翻譯</font></p>
 		</div>
 		<hr>
 
@@ -93,35 +96,35 @@
 		<canvas id="canvas2" width="1500px" height="300px" style="display: none"></canvas>
 	</div>
 	<div class="text-order">
-		<font color="blue">`欲しい!`</font> の描画に
+		<font color="blue">`欲しい!`</font> 部分的文字使用
 		<input id="bar1" type="radio" name="text-order" value="image">
-		<label for="bar1">元ネタの画像を使う</label>
+		<label for="bar1">原梗</label>
 		<input id="bar2" type="radio" name="text-order" value="text" checked>
-		<label for="bar2">文字を生成する</label>
+		<label for="bar2">自己輸入</label>
 	</div>
 	<div class="background-order">
-		画像を保存するとき背景色を
+		下載圖像時，文字背景使用
 		<input id="bar3" type="radio" name="background-order" value="transparent">
-		<label for="bar3">透明にする</label>
+		<label for="bar3">透明</label>
 		<input id="bar4" type="radio" name="background-order" value="white" checked>
-		<label for="bar4">白にする</label>
+		<label for="bar4">白色</label>
 	</div>
 	<div>
-		<span id="labelTop">赤色の文字</span>
+		<span id="labelTop">紅色的文字</span>
 		<input type="text" id="textboxTop" size="50" value="" spellcheck="false" oninput="_canvas.redrawTop();">
 		<br>
-		<span id="labelBottom">銀色の文字</span>
+		<span id="labelBottom">銀色的文字</span>
 		<input type="text" id="textboxBottom" size="50" value="" spellcheck="false" oninput="_canvas.redrawBottom();">
 	</div>
 	<div>
-		<button type="button" onclick="_canvas.save();">画像を保存する</button>
-		<button type="button" onclick="_canvas.newtab();">画像を新しいタブで開く</button>
+		<button type="button" onclick="_canvas.save();">下載圖像</button>
+		<button type="button" onclick="_canvas.newtab();">在新分頁中開啟圖像</button>
 	</div>
 	<div>
 		<hr>
 
 		<p>
-			`欲しい!` はドラッグできます。
+			`欲しい!` （第二行）可以進行拖動。
 			<br>
 			<video autoplay loop muted style="max-width:600px">
 				<source src="demo.mp4" type="video/mp4">
